@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component, Input} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import { Book } from '../../models';
 
 @Component({
   selector: 'books-list',
   templateUrl: 'books-list.html'
 })
+
 export class BooksListComponent {
-  public books: Array<any>;
+  @Input() public books: Array<Book>;
 
   constructor(public navCtrl: NavController) {
-    this.books = [1, 2, 3, 4]
   }
 }
