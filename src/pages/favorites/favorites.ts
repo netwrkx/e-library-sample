@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {Book} from '../../models';
+import {BooksService} from '../../services';
 
 @Component({
   selector: 'favorites-page',
@@ -10,7 +11,7 @@ import {Book} from '../../models';
 export class FavoritesPage {
   public books: Array<Book>;
 
-  constructor(public navCtrl: NavController) {
-    this.books = [];
+  constructor(private booksService: BooksService, private navCtrl: NavController) {
+    booksService.get().subscribe(books => this.books = books);
   }
 }
