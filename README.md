@@ -8,7 +8,12 @@ Clone https://github.com/daria-lym/e-library-sample.git and follow Install secti
 
 ### Prerequisites
 
+node.js
+
 ### Installing
+
+ npm install -g ionic cordova
+ 
 
 ## Running the tests
 
