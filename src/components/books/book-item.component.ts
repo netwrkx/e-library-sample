@@ -11,7 +11,7 @@ export class BookItemComponent {
   @Input() public book: Book;
 
   constructor(public navCtrl: NavController) {
-
+  
   }
 
 }
