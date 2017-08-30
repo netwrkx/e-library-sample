@@ -849,8 +849,7 @@ export class BooksService {
     // return this.http.get('url/to/books');
     return Observable.of(fakeResult).map(result => {
     let booksArray = [];
-    for(let book of result.items)
-      booksArray.push(new Book(book));
+    for(let book of result.items) booksArray.push(new Book(book));
       // TODO: Perform actions on result
       // TODO: Get books info for it and wrap each item into Book model
       // TODO: Return array of Book models
