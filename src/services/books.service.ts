@@ -849,11 +849,11 @@ export class BooksService {
     // return this.http.get('url/to/books');
     return Observable.of(fakeResult).map(result => {
     let booksArray = [];
-    for(let book of Array.from(result.items))
+    for(let book of result.items)
       {
-        let bookElement = new Book(book);
-        booksArray.push(bookElement);
+        booksArray.push(new Book(book));
       }
+      console.log(booksArray);
       // TODO: Perform actions on result
       // TODO: Get books info for it and wrap each item into Book model
       // TODO: Return array of Book models
