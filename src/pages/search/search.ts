@@ -7,10 +7,14 @@ import {BooksService} from '../../services';
   selector: 'search-page',
   templateUrl: 'search.html'
 })
-
+/*
+ * @class Represents Search Page
+ */
 export class SearchPage {
   public books: Array<Book>;
-
+/*
+ * Fetch page with books
+ */
   constructor(private booksService: BooksService, public navCtrl: NavController) {
     booksService.get().subscribe(books => this.books = books);
   }

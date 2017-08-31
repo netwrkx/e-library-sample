@@ -7,10 +7,15 @@ import {BooksService} from '../../services';
   selector: 'favorites-page',
   templateUrl: 'favorites.html'
 })
-
+/*
+ * @class Represents Favorites Page
+ * @param {Object[]} Book
+ */
 export class FavoritesPage {
   public books: Array<Book>;
-
+  /*
+   *Fetch page with books
+   */
   constructor(private booksService: BooksService, private navCtrl: NavController) {
     booksService.get().subscribe(books => this.books = books);
   }

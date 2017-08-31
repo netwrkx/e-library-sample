@@ -1,3 +1,15 @@
+/*
+ * @class Represents Book
+ * @param {string} id
+ * @param {string} title
+ * @param [{string}] authors
+ * @param {Rating} - interface, consist {number} average and {number} count
+ * @param [{string}] categories
+ * @param {string} description
+ * @param {Image} - interface, consist {string} small and {string} thumbnail
+ * @param {number} pages;
+ * @param {Published} - interface, consist {Date} date and {string} by
+ */
 export class Book {
   public id: string;
   public title: string;
@@ -8,7 +20,9 @@ export class Book {
   public image: Image;
   public pages: number;
   public published: Published;
-
+  /*
+   * @constructor Create a book.
+   */
   constructor(data: any) {
     this.id = data.id;
     this.title = data.volumeInfo && data.volumeInfo.title;
