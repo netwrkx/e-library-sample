@@ -15,7 +15,8 @@ export class SearchFormComponent {
   public bookItems: Array<Book>;
 
   constructor(public navCtrl: NavController) {
-
+  }
+  setSearchParams(event){
   }
 
 }
