@@ -3,6 +3,46 @@
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content padding>
+  <h2>Welcome to e-Library!</h2>
+  <p>Looking for something to read ...? What do you prefer:
+    forever young classics or hot new?
+    Take a look what we can offer you at
+    <ion-icon name="search"> search </ion-icon> page.
+  </p>
+  <ion-img width="280" height="256" src="./books.png" alt="books"></ion-img>
+</ion-content>
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(homePage)">
+        Home
+      </button>
+      <button ion-item (click)="openPage(friendsPage)">
+        Registry
+      </button>
+      <button ion-item (click)="openPage(eventsPage)">
+        Events
+      </button>
+      <button ion-item (click)="closeMenu()">
+        Close Menu
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
@@ -14,4 +54,4 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
-</ion-content>
+</ion-content> -->
