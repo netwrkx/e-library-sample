@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Book } from '../../models';
 
 @Component({
   selector: 'search-form',
@@ -10,8 +11,12 @@ import { NavController } from 'ionic-angular';
  */
 export class SearchFormComponent {
 
-  constructor(public navCtrl: NavController) {
+  public searchQuery: string;
+  public bookItems: Array<Book>;
 
+  constructor(public navCtrl: NavController) {
+  }
+  setSearchParams(event){
   }
 
 }
