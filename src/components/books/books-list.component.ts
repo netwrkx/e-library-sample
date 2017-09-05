@@ -6,7 +6,10 @@ import { Book } from '../../models';
   selector: 'books-list',
   templateUrl: 'books-list.html'
 })
-
+/*
+ * @class Represents Book List Component
+ * @param {Object[]} - array of the books
+ */
 export class BooksListComponent {
   @Input() public books: Array<Book>;
 

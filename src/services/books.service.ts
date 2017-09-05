@@ -830,7 +830,9 @@ const fakeResult = {
 }
 ]
 };
-
+/*
+ * @class Represets Book Service
+ */
 @Injectable()
 export class BooksService {
   constructor(private http: Http) {

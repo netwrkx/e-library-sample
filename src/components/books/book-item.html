@@ -1,10 +1,18 @@
 <ion-card>
-  <img src="{{book.image.small}}"/>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-sm-3>
+        <img src="{{book.image.small}}"/>
+      </ion-col>
+      <ion-col col-sm-3>
+        <ion-card-title>{{book.title}}
+        </ion-card-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <ion-card-content>
-    <ion-card-title>{{book.title}}
-      </ion-card-title>
-    <p>
-      {{book.description}}
+    <p text-justify>
+    {{book.description}}
     </p>
-  </ion-card-content>
+    </ion-card-content>
 </ion-card>
