@@ -3,7 +3,8 @@ import {NavController} from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  styleUrls: ['/home.scss']
 })
 /*
  * @class Represents Home Page
