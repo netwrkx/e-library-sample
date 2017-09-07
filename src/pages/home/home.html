@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="img" type="image/png" href="assets/img/ebooks16.png">
 </head>
 <body>
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding class="card-background-page">
-  <ion-card class="cont">
-    <img src="assets/img/book_home_1.png"/>
-    <div class="card-title">Welcome to e-Library!</div>
-    <div class="card-subtitle">Looking for something to read ...?</div>
-  </ion-card>
-<ion-card>
-  <ul>What do you prefer:
-    <li><ion-icon name="book"></ion-icon>forever young classics</li>
-    <li><ion-icon name="book"></ion-icon>...or hot new?</li>
-  </ul>
-  Take a look what we can offer you at
-  <ion-icon name="search"> search </ion-icon> page.
-</ion-card>
-</ion-content>
+  <ion-header>
+    <ion-navbar>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-slides pager>
+  <ion-slide style="background-image: url(assets/img/book_home_1.png)">
+      <ion-card style="background-color: #3675db">
+        <img class="home-page" src="assets/img/ebooks16.png"/>
+        <ion-card-content>
+          <ion-card-title class="home-page">
+            Welcome to e-Library!
+            </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ul>What do you prefer:
+          <li><ion-icon name="bookmarks"></ion-icon>forever young classics</li>
+          <li><ion-icon name="bookmarks"></ion-icon>...or hot new?</li>
+        </ul>
+        Take a look what we can offer you at
+        <ion-icon name="search"> search </ion-icon> page.
+      </ion-card>
+  </ion-slide>
+</ion-slides>
 </body>
 </html>
