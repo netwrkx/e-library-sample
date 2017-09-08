@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Component, Input} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
+import { Book } from '../../models';
 
 @Component({
   selector: 'books-details-page',
@@ -9,7 +11,12 @@ import {NavController} from 'ionic-angular';
  *@class Represents Book Details Page
  */
 export class BooksDetailsPage {
+  public book: Book;
 
-  constructor(public navCtrl: NavController) {
+  constructor(private params: NavParams, private viewCtrl: ViewController) {
+    this.book = params.get('book');
   }
+  closeModal() {
+    this.viewCtrl.dismiss();
+}
 }

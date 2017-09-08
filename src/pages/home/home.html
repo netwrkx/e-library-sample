@@ -1,34 +1,33 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding>
-  <h2>Welcome to e-Library!</h2>
-  <p>Looking for something to read ...? What do you prefer:
-    forever young classics or hot new?
-    Take a look what we can offer you at
-    <ion-icon name="search"> search </ion-icon> page.
-  </p>
-  <ion-img width="280" height="256" src="./books.png" alt="books"></ion-img>
-</ion-content>
-
-
-
-<!-- <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content> -->>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="img" type="image/png" href="assets/img/ebooks16.png">
+</head>
+<body>
+  <ion-header>
+    <ion-navbar>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-slides pager>
+  <ion-slide style="background-image: url(assets/img/book_home_1.png)">
+      <ion-card style="background-color: #3675db">
+        <img class="home-page" src="assets/img/ebooks16.png"/>
+        <ion-card-content>
+          <ion-card-title class="home-page">
+            Welcome to e-Library!
+            </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ul>What do you prefer:
+          <li><ion-icon name="bookmarks"></ion-icon>forever young classics</li>
+          <li><ion-icon name="bookmarks"></ion-icon>...or hot new?</li>
+        </ul>
+        Take a look what we can offer you at
+        <ion-icon name="search"> search </ion-icon> page.
+      </ion-card>
+  </ion-slide>
+</ion-slides>
+</body>
+</html>
