@@ -12,10 +12,18 @@ import {BooksService} from '../../services';
  */
 export class SearchPage {
   public books: Array<Book>;
+  public start: number=0;
+  public step: number=12;
 /*
  * Fetch page with books
  */
   constructor(private booksService: BooksService, public navCtrl: NavController) {
-    booksService.get().subscribe(books => this.books = books);
+    booksService.get('flashpoint', this.start).subscribe(books => this.books = books);
+  }
+  viewMore() {
+    this.start+=this.step;
+    this.booksService.get('flashpoint', this.start).subscribe(books => {
+      for(let book of books) this.books.push(book);
+    });
   }
 }

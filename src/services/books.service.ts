@@ -22,8 +22,8 @@ export class BooksService {
    * @returns {Observable}
    *
    */
-  public get (str: string): Observable<Book[]> {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${str}`;
+  public get (str: string='flashpoint', start: number=0, step: number=12): Observable<Book[]> {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${str}&startIndex=${start}&maxResults=${step}`;
 
     return this.http
       .get(url)
