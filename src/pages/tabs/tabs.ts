@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 
+import {SignInPage} from '../sign-in-page'
 import {HomePage} from '../home';
 import {FavoritesPage} from '../favorites';
 import {SearchPage} from '../search';
@@ -18,6 +19,7 @@ export class TabsPage {
  */
   constructor() {
     this.tabs = [
+      {component: SignInPage, icon: 'log-in', title: 'SignIn'},
       {component: HomePage, icon: 'home', title: 'Home'},
       {component: SearchPage, icon: 'search', title: 'Search'},
       {component: FavoritesPage, icon: 'star', title: 'Favorites'},

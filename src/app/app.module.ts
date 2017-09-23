@@ -7,7 +7,8 @@ import {
   HomePage,
   BooksDetailsPage,
   FavoritesPage,
-  SearchPage
+  SearchPage,
+  SignInPage
 } from '../pages';
 // Custom components
 import {
@@ -35,7 +36,8 @@ import {HttpModule} from '@angular/http';
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
-    BooksListComponent
+    BooksListComponent,
+    SignInPage
   ],
   imports: [
     HttpModule,
@@ -49,6 +51,7 @@ import {HttpModule} from '@angular/http';
     FavoritesPage,
     SearchPage,
     HomePage,
+    SignInPage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
