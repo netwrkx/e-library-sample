@@ -1,24 +1,24 @@
 import {NgModule, ErrorHandler} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
-import {MyApp} from './app.component';
+import {ELibraryApp} from './app.component';
 // Pages
 import {
   HomePage,
   BooksDetailsPage,
   FavoritesPage,
   SearchPage
-} from '../pages';
+} from './pages';
 // Custom components
 import {
   SearchFormComponent,
   BookItemComponent,
   BooksListComponent
-} from '../components';
+} from './components';
 // Tabs component
-import {TabsPage} from '../pages/tabs/tabs';
+import {TabsPage} from './pages/tabs/tabs';
 // Custom services
-import {BooksService} from '../services';
+import {BooksService} from './services';
 // Ionic providers
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -27,7 +27,7 @@ import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
-    MyApp,
+    ELibraryApp,
     BooksDetailsPage,
     FavoritesPage,
     SearchPage,
@@ -40,11 +40,11 @@ import {HttpModule} from '@angular/http';
   imports: [
     HttpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(ELibraryApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    ELibraryApp,
     BooksDetailsPage,
     FavoritesPage,
     SearchPage,

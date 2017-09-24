@@ -21,9 +21,9 @@ export class SearchPage {
     booksService.get('flashpoint', this.start).subscribe(books => this.books = books);
   }
   viewMore() {
-    this.start+=this.step;
-    this.booksService.get('flashpoint', this.start).subscribe(books => {
-      for(let book of books) this.books.push(book);
-    });
+    // this.start+=this.step;
+    // this.booksService.get('flashpoint', this.start).subscribe(books => {
+    //   for(let book of books) this.books.push(book);
+    // });
   }
 }
