@@ -14,7 +14,6 @@ export class SearchPage {
    * Basic setup
    */
   constructor() {
-
   }
 
   // TODO: bind output from search to this method

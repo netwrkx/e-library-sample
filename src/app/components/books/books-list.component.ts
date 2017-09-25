@@ -8,7 +8,6 @@ import {BooksService} from '../../services';
 })
 /*
  * @class Represents Book List Component
- * @param {Object[]} - array of the books
  */
 export class BooksListComponent {
   @Input('text') set reset(value: string) {

@@ -21,8 +21,7 @@ export class BooksService {
   /*
    *
    * Fetch books from google api
-   * @param {string} str - represent string will be searched
-   * @param {number} page - represent
+   * @param {boolean} isScrolling - reset search params if true
    * @returns {Observable}
    *
    */
