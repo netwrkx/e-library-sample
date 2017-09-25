@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import { Book } from '../../models';
+import {Book} from '../../models';
+import {BooksService} from '../../services';
 
 @Component({
   selector: 'books-list',
@@ -11,8 +11,28 @@ import { Book } from '../../models';
  * @param {Object[]} - array of the books
  */
 export class BooksListComponent {
-  @Input() public books: Array<Book>;
+  @Input('text') set reset(value: string) {
+    this.searchString = value;
+    this.books = [];
 
-  constructor(public navCtrl: NavController) {
+    this.load();
+  };
+
+  public books: Array<Book> = [];
+  public searchString: string;
+
+  constructor(private booksService: BooksService) {
+  }
+
+  ngOnInit() {
+    this.load();
+  }
+
+  load(infiniteScroll = null) {
+    this.booksService.get(this.searchString, !!infiniteScroll).subscribe(books => {
+      if(infiniteScroll) infiniteScroll.complete();
+
+      this.books = [...this.books, ...books];
+    });
   }
 }

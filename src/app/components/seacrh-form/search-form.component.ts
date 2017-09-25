@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
  * @class Represents Search Form Component
  */
 export class SearchFormComponent {
+  // TODO: output with search text
   constructor() {
   }
   setSearchParams(event){

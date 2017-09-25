@@ -11,6 +11,10 @@ import 'rxjs/add/operator/map'
  */
 @Injectable()
 export class BooksService {
+  public url: string = 'https://www.googleapis.com/books/v1/volumes';
+  public start: number = 0;
+  public step: number = 12;
+
   constructor(private http: Http) {
   }
 
@@ -22,14 +26,20 @@ export class BooksService {
    * @returns {Observable}
    *
    */
-  public get (str: string='flashpoint', start: number=0, step: number=12): Observable<Book[]> {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${str}&startIndex=${start}&maxResults=${step}`;
+  public get (str: string = 'flashpoint', isScrolling: boolean = false): Observable<Book[]> {
+    this.start = isScrolling ? (this.start + this.step) : 0;
+
+    const url = `${this.url}?q=${str}&startIndex=${this.start}&maxResults=${this.step}`;
 
     return this.http
       .get(url)
       .map(response => {
-        let booksArray = [];
-        for (let book of response.json().items) booksArray.push(new Book(book));
+        const booksArray = [];
+        const data = response.json();
+
+        if (!response || !data || !data.items) return booksArray;
+
+        data.items.forEach(item => booksArray.push(new Book(item)));
 
         return booksArray;
       });

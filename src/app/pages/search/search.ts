@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Book } from '../../models';
-import {BooksService} from '../../services';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'search-page',
@@ -11,19 +8,17 @@ import {BooksService} from '../../services';
  * @class Represents Search Page
  */
 export class SearchPage {
-  public books: Array<Book>;
-  public start: number=0;
-  public step: number=12;
-/*
- * Fetch page with books
- */
-  constructor(private booksService: BooksService, public navCtrl: NavController) {
-    booksService.get('flashpoint', this.start).subscribe(books => this.books = books);
+  public text: string;
+
+  /*
+   * Basic setup
+   */
+  constructor() {
+
   }
-  viewMore() {
-    // this.start+=this.step;
-    // this.booksService.get('flashpoint', this.start).subscribe(books => {
-    //   for(let book of books) this.books.push(book);
-    // });
+
+  // TODO: bind output from search to this method
+  onSearch() {
+    this.text = 'test';
   }
 }
