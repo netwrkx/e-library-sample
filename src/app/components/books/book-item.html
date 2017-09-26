@@ -1,0 +1,33 @@
+<ion-card>
+  <ion-item>
+    <ion-thumbnail item-start>
+      <img [src]="book.image.small">
+    </ion-thumbnail>
+    <h1 class="card-title">{{book.title}}</h1>
+    <p>{{book.published.date | date: 'yMMMMd'}}</p>
+  </ion-item>
+  <ion-card-content>
+    <p *ngIf="book.authors">{{book.authors}}</p>
+    <p *ngIf="book.pages">{{book.pages}}</p>
+    <h2 *ngIf="book.categories" class="bold-text">{{book.categories}}</h2>
+  </ion-card-content>
+  <ion-row>
+    <button class="card-button" ion-button full outline text-uppercase="">View Detail</button>
+  </ion-row>
+  <ion-row class="card-footer">
+    <ion-col>
+        <ion-icon name="md-star"></ion-icon>
+        <ion-icon name="md-star"></ion-icon>
+        <ion-icon name="md-star"></ion-icon>
+        <ion-icon name="md-star"></ion-icon>
+        <ion-icon name="md-star-outline"></ion-icon>
+        <span>{{book.rating.count}}</span>
+    </ion-col>
+    <ion-col text-right>
+      <button ion-button icon-right clear small>
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+

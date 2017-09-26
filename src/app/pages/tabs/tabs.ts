@@ -5,7 +5,8 @@ import {FavoritesPage} from '../favorites';
 import {SearchPage} from '../search';
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  styleUrls: ['/tabs.scss']
 })
 /*
  * @class Represents Tabs Page
@@ -18,9 +19,9 @@ export class TabsPage {
  */
   constructor() {
     this.tabs = [
-      {component: HomePage, icon: 'home', title: 'Home'},
-      {component: SearchPage, icon: 'search', title: 'Search'},
-      {component: FavoritesPage, icon: 'star', title: 'Favorites'},
+      {component: HomePage, icon: 'md-home', title: 'Home'},
+      {component: SearchPage, icon: 'md-search', title: 'Search'},
+      {component: FavoritesPage, icon: 'md-star', title: 'Favorites'},
     ];
   }
 }
