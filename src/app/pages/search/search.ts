@@ -10,6 +10,7 @@ import {Component} from '@angular/core';
 export class SearchPage {
   public text: string;
 
+
   /*
    * Basic setup
    */
@@ -17,7 +18,7 @@ export class SearchPage {
   }
 
   // TODO: bind output from search to this method
-  onSearch() {
-    this.text = 'test';
+  onSearch(event: any) {
+    this.text = event;
   }
 }
