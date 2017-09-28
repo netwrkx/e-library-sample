@@ -1,12 +1,13 @@
-import { Component, Input } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Book } from '../../models';
-import { ModalController } from 'ionic-angular';
-import { BooksDetailsPage } from '../../pages/book-details/books-details';
+import {Component, Input} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {Book} from '../../models';
+import {ModalController} from 'ionic-angular';
+import {BooksDetailsPage} from '../../pages/book-details/books-details';
 
 @Component({
   selector: 'book-item',
-  templateUrl: 'book-item.html'
+  templateUrl: 'book-item.html',
+  styleUrls: ['/book-item.scss']
 })
 /*
  * @class Represents Book Item Component
@@ -18,27 +19,23 @@ export class BookItemComponent {
   private stars: string[] = [];
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-
   }
 
   ngOnInit() {
     if (!this.book || !this.book.rating || !this.book.rating.average) return;
 
     for (let i = 1; i <= 5; i++) {
-      if (i <= this.book.rating.average) {
-          this.stars.push('md-star')
-      } else {
-        if (this.book.rating.average > (i-1)) {
-          this.stars.push('md-star-half')
-        } else {
-          this.stars.push('md-star-outline')
-        }
-      }
+      const icons = [
+        {name: 'md-star', condition: i <= this.book.rating.average},
+        {name: 'md-star-half', condition: this.book.rating.average > (i - 1)},
+        {name: 'md-star-outline', condition: i > this.book.rating.average}
+      ];
+
+      this.stars.push(icons.find(icon => icon.condition).name)
     }
   }
 
   openModal() {
-    let myModal = this.modalCtrl.create(BooksDetailsPage, {book: this.book});
-    myModal.present();
+    this.modalCtrl.create(BooksDetailsPage, {book: this.book}).present();
   }
 }
