@@ -13,7 +13,8 @@ import {
 import {
   SearchFormComponent,
   BookItemComponent,
-  BooksListComponent
+  BooksListComponent,
+  FavoriteListComponent
 } from './components';
 // Tabs component
 import {TabsPage} from './pages/tabs/tabs';
@@ -35,7 +36,8 @@ import {HttpModule} from '@angular/http';
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
-    BooksListComponent
+    BooksListComponent,
+    FavoriteListComponent
   ],
   imports: [
     HttpModule,
@@ -52,7 +54,8 @@ import {HttpModule} from '@angular/http';
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
-    BooksListComponent
+    BooksListComponent,
+    FavoriteListComponent
   ],
   providers: [
     StatusBar,

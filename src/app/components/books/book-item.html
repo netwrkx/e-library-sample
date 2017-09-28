@@ -20,10 +20,10 @@
         <span *ngIf="book">{{book.rating.count}}</span>
     </ion-col>
     <ion-col text-right>
-      <button ion-button icon-right clear small>
-        <ion-icon name="md-add"></ion-icon>
+      <button ion-button icon-right clear small (click)="switchAdd()">
+        <ion-icon *ngIf="add" name="md-add"></ion-icon>
+        <ion-icon *ngIf="rem" name="md-remove"></ion-icon>
       </button>
     </ion-col>
   </ion-row>
 </ion-card>
-
