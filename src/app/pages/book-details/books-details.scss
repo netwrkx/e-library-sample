@@ -1,0 +1,18 @@
+books-details-page {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif !important;
+  .card-title {
+    font-family: Papyrus, fantasy;
+  }
+
+  .card-footer ion-col, .card-footer ion-col button, .card-button {
+    color: #e0bc75 !important;
+  }
+
+  .card-button {
+    border: 2px solid #e0bc75;
+  }
+
+  .card-button:active {
+    background: rgba(224, 188, 117, 0.1);
+  }
+}

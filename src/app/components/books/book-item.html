@@ -12,16 +12,12 @@
     <h2 *ngIf="book.categories" class="bold-text">{{book.categories}}</h2>
   </ion-card-content>
   <ion-row>
-    <button class="card-button" ion-button full outline text-uppercase="">View Detail</button>
+    <button class="card-button" ion-button full outline text-uppercase (click)="openModal()">View Detail</button>
   </ion-row>
   <ion-row class="card-footer">
-    <ion-col>
-        <ion-icon name="md-star"></ion-icon>
-        <ion-icon name="md-star"></ion-icon>
-        <ion-icon name="md-star"></ion-icon>
-        <ion-icon name="md-star"></ion-icon>
-        <ion-icon name="md-star-outline"></ion-icon>
-        <span>{{book.rating.count}}</span>
+    <ion-col *ngIf="book.rating.count">
+        <ion-icon *ngFor="let star of stars" name="{{star}}"></ion-icon>
+        <span *ngIf="book">{{book.rating.count}}</span>
     </ion-col>
     <ion-col text-right>
       <button ion-button icon-right clear small>
