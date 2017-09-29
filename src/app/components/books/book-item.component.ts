@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Book } from '../../models';
 import { ModalController } from 'ionic-angular';
 import { BooksDetailsPage } from '../../pages/book-details/books-details';
+import { FavoriteSwichService } from '../../services';
 
 @Component({
   selector: 'book-item',
@@ -15,15 +16,18 @@ import { BooksDetailsPage } from '../../pages/book-details/books-details';
  */
 export class BookItemComponent {
   @Input() public book: Book;
-
-  private add: boolean = true;
-  private rem: boolean = false;
+  private switchCase: boolean[] = [false, false];
   private stars: string[] = [];
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public favorite: FavoriteSwichService) {
   }
 
   ngOnInit() {
+
+    if (localStorage[this.book.id]) {
+      this.switchCase = this.favorite.swich(true, false, false);
+    } else this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], false);
+
     if (!this.book || !this.book.rating || !this.book.rating.average) return;
 
     for (let i = 1; i <= 5; i++) {
@@ -41,15 +45,6 @@ export class BookItemComponent {
     this.modalCtrl.create(BooksDetailsPage, { book: this.book }).present();
   }
   switchAdd() {
-    if (this.add) {
-      this.add = false;
-      this.rem = true;
-      localStorage.setItem(this.book.id, JSON.stringify(this.book));
-    } else {
-      this.add = true;
-      this.rem = false;
-      localStorage.removeItem(this.book.id);
-    }
-
+    this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], this.book);
   }
 }

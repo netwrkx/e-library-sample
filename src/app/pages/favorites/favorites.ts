@@ -15,6 +15,6 @@ export class FavoritesPage {
    *Fetch page with books
    */
   constructor() {
-    
+
   }
 }

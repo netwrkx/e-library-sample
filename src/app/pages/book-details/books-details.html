@@ -10,8 +10,9 @@
     </ion-row>
     <ion-row class="card-footer">
       <ion-col text-right>
-        <button ion-button icon-right clear small>
-          <ion-icon name="md-add"></ion-icon>
+        <button ion-button icon-right clear small (click)="switchAdd()">
+          <ion-icon *ngIf="switchCase[0]" name="md-add"></ion-icon>
+          <ion-icon *ngIf="switchCase[1]" name="md-remove"></ion-icon>
         </button>
       </ion-col>
     </ion-row>
