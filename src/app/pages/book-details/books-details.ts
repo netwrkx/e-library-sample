@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {NavParams} from 'ionic-angular';
-import {ViewController} from 'ionic-angular';
-import {Book} from '../../models';
+import { Component } from '@angular/core';
+import { NavParams } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
+import { Book } from '../../models';
 import { FavoriteSwichService } from '../../services';
 
 @Component({
@@ -19,13 +19,11 @@ export class BooksDetailsPage {
 
   constructor(private params: NavParams, private viewCtrl: ViewController, public favorite: FavoriteSwichService) {
     this.book = params.get('book');
-    if (localStorage[this.book.id]) {
-      this.switchCase = this.favorite.swich(true, false, false);
-    } else this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], false);
+    this.switchCase = params.get('case');
   }
 
   closeModal() {
-    this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss(this.switchCase);
   }
   switchAdd() {
     this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], this.book);

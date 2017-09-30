@@ -42,7 +42,9 @@ export class BookItemComponent {
   }
 
   openModal() {
-    this.modalCtrl.create(BooksDetailsPage, { book: this.book }).present();
+    let newModal = this.modalCtrl.create(BooksDetailsPage, { book: this.book, case: this.switchCase });
+    newModal.onDidDismiss(data => this.switchCase = data);
+    newModal.present();
   }
   switchAdd() {
     this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], this.book);
