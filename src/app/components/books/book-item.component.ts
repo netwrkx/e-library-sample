@@ -4,6 +4,7 @@ import { Book } from '../../models';
 import { ModalController } from 'ionic-angular';
 import { BooksDetailsPage } from '../../pages/book-details/books-details';
 import { FavoriteSwichService } from '../../services';
+import { AddFavoriteList } from '../../pages/add-favorite-list/add-favorite-list';
 
 @Component({
   selector: 'book-item',
@@ -23,8 +24,7 @@ export class BookItemComponent {
   }
 
   ngOnInit() {
-
-    if (localStorage[this.book.id]) {
+    if (this.favorite.find(this.book)) {
       this.switchCase = this.favorite.swich(true, false, false);
     } else this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], false);
 
@@ -48,5 +48,8 @@ export class BookItemComponent {
   }
   switchAdd() {
     this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], this.book);
+    if(this.switchCase[1]){
+      this.modalCtrl.create(AddFavoriteList).present();
+    }
   }
 }

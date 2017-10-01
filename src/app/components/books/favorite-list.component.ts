@@ -18,7 +18,7 @@ export class FavoriteListComponent {
 
   ngOnInit() {
     for (let key in localStorage) {
-      if (key.length === 12) this.books.push(JSON.parse(localStorage[key]));
+      if (key.length >= 12) this.books.push(JSON.parse(localStorage[key]));
     }
   }
 }

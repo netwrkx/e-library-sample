@@ -7,7 +7,8 @@ import {
   HomePage,
   BooksDetailsPage,
   FavoritesPage,
-  SearchPage
+  SearchPage,
+  AddFavoriteList
 } from './pages';
 // Custom components
 import {
@@ -37,7 +38,8 @@ import {HttpModule} from '@angular/http';
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    FavoriteListComponent
+    FavoriteListComponent,
+    AddFavoriteList
   ],
   imports: [
     HttpModule,
@@ -55,7 +57,8 @@ import {HttpModule} from '@angular/http';
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    FavoriteListComponent
+    FavoriteListComponent,
+    AddFavoriteList
   ],
   providers: [
     StatusBar,
