@@ -7,14 +7,9 @@ import {
   HomePage,
   BooksDetailsPage,
   FavoritesPage,
-<<<<<<< HEAD
   SearchPage,
   SignInPage
-} from '../pages';
-=======
-  SearchPage
 } from './pages';
->>>>>>> develop
 // Custom components
 import {
   SearchFormComponent,

@@ -28,6 +28,9 @@
 
 </head>
 <body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
   <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -47,8 +50,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-  <!-- Ionic's root component and where the app will load -->
-  <ion-app></ion-app>
 
   <!-- The polyfills js is generated during the build process -->
   <script src="build/polyfills.js"></script>
