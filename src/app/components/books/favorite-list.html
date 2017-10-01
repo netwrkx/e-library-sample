@@ -1,4 +1,10 @@
-<book-item *ngFor="let book of books" [book]="book"></book-item>
-<ion-infinite-scroll>
-    <ion-infinite-scroll-content></ion-infinite-scroll-content>
-</ion-infinite-scroll>
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <book-item *ngFor="let book of books" [book]="book"></book-item>
+    <ion-infinite-scroll>
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

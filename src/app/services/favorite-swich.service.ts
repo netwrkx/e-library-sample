@@ -15,7 +15,7 @@ export class FavoriteSwichService {
     if (!add && !rem) return [true, false]
     else if (add && !book) return [false, true]
     else if (add && book) {
-      localStorage.setItem(`${book.id}@`, JSON.stringify(book));
+      localStorage.setItem(`${book.id}@@All`, JSON.stringify(book));
       return [false, true];
     }
     else {

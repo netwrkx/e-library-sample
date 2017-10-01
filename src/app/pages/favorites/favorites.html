@@ -1,5 +1,7 @@
-<ion-header>    
+<ion-header>
 </ion-header>
-<ion-content>
-    <favorite-list></favorite-list>
+<ion-content padding>
+    <ion-list>
+        <button ion-item *ngFor="let item of categories" (click)="goTo(item)">{{item}}</button>
+    </ion-list>
 </ion-content>

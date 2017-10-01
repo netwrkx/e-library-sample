@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../../models';
+import { NavParams } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 
 
 @Component({
@@ -13,12 +15,8 @@ export class FavoriteListComponent {
 
   public books: Array<Book> = [];
 
-  constructor() {
-  }
 
-  ngOnInit() {
-    for (let key in localStorage) {
-      if (key.length >= 12) this.books.push(JSON.parse(localStorage[key]));
-    }
+  constructor(private params: NavParams,private viewCtrl: ViewController) {
+    this.books = params.get('books');
   }
 }

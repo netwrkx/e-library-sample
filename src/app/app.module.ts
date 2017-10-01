@@ -57,7 +57,7 @@ import {HttpModule} from '@angular/http';
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    FavoriteListComponent,
+    FavoriteListComponent,    
     AddFavoriteList
   ],
   providers: [
