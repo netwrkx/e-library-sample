@@ -12,7 +12,7 @@ import { FavoriteListComponent } from '../../components/books';
  * @param {Object[]} Book
  */
 export class FavoritesPage {
-  public categories: string[] = [];
+  public categories: string[] = ['All'];
   public books: Array<Book> = [];
   /*
    *Fetch page with books
@@ -38,5 +38,6 @@ export class FavoritesPage {
       };
     }
     this.navCtrl.push(FavoriteListComponent, {books : this.books});
+    this.books=[];    
   }
 }

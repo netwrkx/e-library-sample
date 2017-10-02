@@ -11,11 +11,11 @@ export class FavoriteSwichService {
     return el;
   };
 
-  swich(add, rem, book) {
+  swich(add, rem, book, category) {
     if (!add && !rem) return [true, false]
     else if (add && !book) return [false, true]
     else if (add && book) {
-      localStorage.setItem(`${book.id}@@All`, JSON.stringify(book));
+      localStorage.setItem(`${book.id}@@${category}`, JSON.stringify(book));
       return [false, true];
     }
     else {

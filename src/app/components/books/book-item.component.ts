@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController, ToastController } from 'ionic-angular';
 import { Book } from '../../models';
-import { ModalController } from 'ionic-angular';
 import { BooksDetailsPage } from '../../pages/book-details/books-details';
 import { FavoriteSwichService } from '../../services';
 import { AddFavoriteList } from '../../pages/add-favorite-list/add-favorite-list';
@@ -20,13 +19,13 @@ export class BookItemComponent {
   private switchCase: boolean[] = [false, false];
   private stars: string[] = [];
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public favorite: FavoriteSwichService) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public favorite: FavoriteSwichService, public toast: ToastController) {
   }
 
   ngOnInit() {
     if (this.favorite.find(this.book)) {
-      this.switchCase = this.favorite.swich(true, false, false);
-    } else this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], false);
+      this.switchCase = this.favorite.swich(true, false, false,'');
+    } else this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], false,'');
 
     if (!this.book || !this.book.rating || !this.book.rating.average) return;
 
@@ -46,10 +45,23 @@ export class BookItemComponent {
     newModal.onDidDismiss(data => this.switchCase = data);
     newModal.present();
   }
+
   switchAdd() {
-    this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], this.book);
-    if(this.switchCase[1]){
-      this.modalCtrl.create(AddFavoriteList).present();
+    if (this.switchCase[0]) {
+      let addCategory = this.modalCtrl.create(AddFavoriteList);
+      addCategory.onDidDismiss(data => {
+        if (data) {
+          this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], this.book, data);
+        }
+      });
+      addCategory.present();
+    } else {
+      this.toast.create({
+        message: "The book has been deleted from favorites. It's sad, but true!",
+        duration: 3000,
+        position: 'top'
+      }).present();
+      this.switchCase = this.favorite.swich(this.switchCase[0], this.switchCase[1], this.book, '');
     }
   }
 }
