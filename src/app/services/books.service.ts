@@ -25,7 +25,7 @@ export class BooksService {
    * @returns {Observable}
    *
    */
-  public get (str: string = 'flashpoint', isScrolling: boolean = false): Observable<Book[]> {
+  public get (str: string = '', isScrolling: boolean = false): Observable<Book[]> {
     this.start = isScrolling ? (this.start + this.step) : 0;
 
     const url = `${this.url}?q=${str}&startIndex=${this.start}&maxResults=${this.step}`;
