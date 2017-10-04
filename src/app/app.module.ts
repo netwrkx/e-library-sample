@@ -2,6 +2,7 @@ import {NgModule, ErrorHandler} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {ELibraryApp} from './app.component';
+import {OAuthModule} from './pages/oauth/oauth.module';
 // Pages
 import {
   HomePage,
@@ -42,7 +43,8 @@ import {HttpModule} from '@angular/http';
   imports: [
     HttpModule,
     BrowserModule,
-    IonicModule.forRoot(ELibraryApp)
+    IonicModule.forRoot(ELibraryApp),
+    OAuthModule    
   ],
   bootstrap: [IonicApp],
   entryComponents: [

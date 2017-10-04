@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {SearchPage} from '../search';
 import {FavoritesPage} from '../favorites';
+import {SignInPage} from '../sign-in-page';
+import {OAuthProvidersListPage} from '../oauth/list/oauth-providers.list.page'
 
 @Component({
   selector: 'page-home',
@@ -17,7 +19,8 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
     this.pages = {
       search: SearchPage,
-      favorites: FavoritesPage
+      favorites: FavoritesPage,
+      oauth: OAuthProvidersListPage
     };
   }
 
