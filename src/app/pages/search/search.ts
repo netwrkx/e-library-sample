@@ -18,7 +18,7 @@ export class SearchPage {
   }
 
   // TODO: bind output from search to this method
-  onSearch(event: any) {
-    this.text = event;
+  onSearch(text: string) {
+    this.text = text;
   }
 }

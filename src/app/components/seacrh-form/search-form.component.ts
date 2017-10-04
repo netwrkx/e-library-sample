@@ -14,7 +14,7 @@ export class SearchFormComponent {
   // TODO: output with search text
   constructor() {
   }
-  setSearchParams(event: any){
+  setSearchParams(){
     this.searchUpdate.emit(this.search);
   }
 }
