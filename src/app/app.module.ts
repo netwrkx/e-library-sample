@@ -8,8 +8,7 @@ import {
   HomePage,
   BooksDetailsPage,
   FavoritesPage,
-  SearchPage,
-  SignInPage
+  SearchPage
 } from './pages';
 // Custom components
 import {
@@ -37,14 +36,13 @@ import {HttpModule} from '@angular/http';
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
-    BooksListComponent,
-    SignInPage
+    BooksListComponent
   ],
   imports: [
     HttpModule,
     BrowserModule,
     IonicModule.forRoot(ELibraryApp),
-    OAuthModule    
+    OAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,7 +51,6 @@ import {HttpModule} from '@angular/http';
     FavoritesPage,
     SearchPage,
     HomePage,
-    SignInPage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,

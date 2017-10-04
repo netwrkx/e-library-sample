@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {SearchPage} from '../search';
 import {FavoritesPage} from '../favorites';
-import {SignInPage} from '../sign-in-page';
 import {OAuthProvidersListPage} from '../oauth/list/oauth-providers.list.page'
 
 @Component({
