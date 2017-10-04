@@ -4,7 +4,7 @@ import { IOathProvider } from '../oauth.provider.interface';
 import { OAuthProfile } from '../models/oauth-profile.model';
 import { Oauth } from 'ng2-cordova-oauth/oauth';
 import { Google } from 'ng2-cordova-oauth/provider/google';
-import { Config } from '../../../config';
+import { Config } from '../../../../config';
 import { Http } from '@angular/http';
 interface ILoginResponse {
 	access_token: string;

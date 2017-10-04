@@ -10,7 +10,8 @@ import { FacebookOauthProvider } from './facebook/facebook-oauth.provider';
 @NgModule({
 	imports: [IonicModule],
 	declarations: [
-		OAuthProvidersListPage
+		OAuthProvidersListPage,
+		OAuthProfilePage
 	],
 	entryComponents: [
 		OAuthProvidersListPage,

@@ -16,7 +16,7 @@ constructor(injector: Injector) {
 login(source: string): Promise<OAuthToken> {
 		return this.getOAuthService(source).login().then(accessToken => {
 			if (!accessToken) {
-				return Promise.reject('No access token found');
+				return Promise.reject<OAuthToken>('No access token found');
 			}
 let oauthToken = {
 				accessToken: accessToken,
