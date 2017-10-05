@@ -8,14 +8,14 @@ import {
   BooksDetailsPage,
   CategoryPage,
   SearchPage,
-  CategoryDetails
+  CategoryManagement
 } from './pages';
 // Custom components
 import {
   SearchFormComponent,
   BookItemComponent,
   BooksListComponent,
-  CategoryListComponent
+  CategoryDetailsComponent
 } from './components';
 // Tabs component
 import {TabsPage} from './pages/tabs/tabs';
@@ -38,8 +38,8 @@ import {HttpModule} from '@angular/http';
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    CategoryListComponent,
-    CategoryDetails
+    CategoryDetailsComponent,
+    CategoryManagement
   ],
   imports: [
     HttpModule,
@@ -57,8 +57,8 @@ import {HttpModule} from '@angular/http';
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    CategoryListComponent,
-    CategoryDetails
+    CategoryDetailsComponent,
+    CategoryManagement
   ],
   providers: [
     StatusBar,

@@ -6,15 +6,15 @@ import { CategoryService } from '../../services';
 
 
 @Component({
-  selector: 'category-details',
-  templateUrl: 'category-details.html',
-  styleUrls: ['/category-details.scss']
+  selector: 'category-management',
+  templateUrl: 'category-management.html',
+  styleUrls: ['/category-management.scss']
 })
 
 /*
  *@class Represents Book Details Page
  */
-export class CategoryDetails {
+export class CategoryManagement {
   public book: Book;
   private categories: string[] = [];
   private category: string;

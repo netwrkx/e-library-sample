@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../../models';
 import { NavController } from 'ionic-angular';
-import { CategoryListComponent } from '../../components/books';
+import { CategoryDetailsComponent } from '../../components/books';
 import { CategoryService } from '../../services';
 
 @Component({
@@ -28,7 +28,7 @@ export class CategoryPage {
     } else {
       this.books = this.categoryServ.getBooks(item);
     }
-    this.navCtrl.push(CategoryListComponent, { books: this.books });
+    this.navCtrl.push(CategoryDetailsComponent, { books: this.books });
   };
 
   removeCategory(item, e) {
