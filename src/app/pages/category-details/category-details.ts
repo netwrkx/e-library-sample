@@ -25,16 +25,18 @@ export class CategoryDetails {
     this.categories = this.categoryServ.getCategories();
   }
   select(item) {
-    //console.log(item);
+    //console.log(this.categoryServ.find(this.book, item));
+    let status = (this.categoryServ.find(this.book, item)) ? true : false;
+    //console.log(status);
+    return status;
   }
 
   closeModal(status) {
-    console.log(status);
     if (status === 'cancel') {
       this.viewCtrl.dismiss();
     } else {
       this.categoryServ.removeBook(this.book)
-      this.viewCtrl.dismiss();      
+      this.viewCtrl.dismiss();
       if (status) {
         this.categoryServ.saveBook(status, this.book);
       }

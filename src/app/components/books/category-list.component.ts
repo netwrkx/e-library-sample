@@ -5,13 +5,13 @@ import { ViewController } from 'ionic-angular';
 
 
 @Component({
-  selector: 'favorite-list',
-  templateUrl: 'favorite-list.html'
+  selector: 'category-list',
+  templateUrl: 'category-list.html'
 })
 /*
  * @class Represents Book List Component
  */
-export class FavoriteListComponent {
+export class CategoryListComponent {
 
   public books: Array<Book> = [];
 

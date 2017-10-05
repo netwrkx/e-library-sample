@@ -15,7 +15,6 @@ import { CategoryDetails } from '../../pages/category-details';
  */
 export class BookItemComponent {
   @Input() public book: Book;
-  private switchCase: boolean[] = [false, false];
   private stars: string[] = [];
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public toast: ToastController) {
@@ -40,7 +39,7 @@ export class BookItemComponent {
     this.modalCtrl.create(BooksDetailsPage, { book: this.book }).present();
   }
 
-  switchAdd() {
+  categoryManage() {
     this.modalCtrl.create(CategoryDetails, { book: this.book }).present();
   }
 }

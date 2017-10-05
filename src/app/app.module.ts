@@ -6,7 +6,7 @@ import {ELibraryApp} from './app.component';
 import {
   HomePage,
   BooksDetailsPage,
-  FavoritesPage,
+  CategoryPage,
   SearchPage,
   CategoryDetails
 } from './pages';
@@ -15,7 +15,7 @@ import {
   SearchFormComponent,
   BookItemComponent,
   BooksListComponent,
-  FavoriteListComponent
+  CategoryListComponent
 } from './components';
 // Tabs component
 import {TabsPage} from './pages/tabs/tabs';
@@ -31,14 +31,14 @@ import {HttpModule} from '@angular/http';
   declarations: [
     ELibraryApp,
     BooksDetailsPage,
-    FavoritesPage,
+    CategoryPage,
     SearchPage,
     HomePage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    FavoriteListComponent,
+    CategoryListComponent,
     CategoryDetails
   ],
   imports: [
@@ -50,14 +50,14 @@ import {HttpModule} from '@angular/http';
   entryComponents: [
     ELibraryApp,
     BooksDetailsPage,
-    FavoritesPage,
+    CategoryPage,
     SearchPage,
     HomePage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    FavoriteListComponent,
+    CategoryListComponent,
     CategoryDetails
   ],
   providers: [

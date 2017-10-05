@@ -14,16 +14,17 @@ import { CategoryDetails } from '../../pages/category-details';
  */
 export class BooksDetailsPage {
   public book: Book;
-  private switchCase: boolean[] = [false, false];
+
 
   constructor(private params: NavParams, public modalCtrl: ModalController, private viewCtrl: ViewController, public toast: ToastController) {
     this.book = params.get('book');
-    this.switchCase = params.get('case');
-  }
+  };
 
   closeModal() {
-    this.viewCtrl.dismiss(this.switchCase);
-  }
+    this.viewCtrl.dismiss();
+  };
 
-
+  categoryManage() {
+    this.modalCtrl.create(CategoryDetails, { book: this.book }).present();
+  };
 }

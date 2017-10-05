@@ -59,10 +59,10 @@ export class CategoryService {
     return el;
   };
 
-  getBooks(item) {    
+  getBooks(item) {
     let books = JSON.parse(`[${localStorage[item]}]`);
     return books;
-   };
+  };
 
   getAllBooks() {
     let categories = this.getCategories();
@@ -75,5 +75,7 @@ export class CategoryService {
     })
     return books;
   };
-
+  remove(item) {
+    (item === 'All') ? localStorage.clear() : localStorage.removeItem(item);
+  }
 }

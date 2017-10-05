@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { Book } from '../../models';
 import { NavController } from 'ionic-angular';
-import { FavoriteListComponent } from '../../components/books';
+import { CategoryListComponent } from '../../components/books';
 import { CategoryService } from '../../services';
 
 @Component({
-  selector: 'favorites-page',
-  templateUrl: 'favorites.html'
+  selector: 'category-page',
+  templateUrl: 'category.html'
 })
 /*
  * @class Represents Favorites Page
  * @param {Object[]} Book
  */
-export class FavoritesPage {
+export class CategoryPage {
   public categories: string[] = ['All'];
   public books: Array<Book> = [];
   /*
@@ -23,12 +23,17 @@ export class FavoritesPage {
   };
 
   goTo(item) {
-
     if (item === 'All') {
       this.books = this.categoryServ.getAllBooks();
     } else {
       this.books = this.categoryServ.getBooks(item);
-    }    
-    this.navCtrl.push(FavoriteListComponent, { books: this.books });
+    }
+    this.navCtrl.push(CategoryListComponent, { books: this.books });
+  };
+
+  removeCategory(item, e) {
+    (item === 'All') ? this.categories.splice(1) :
+      this.categories.splice(this.categories.indexOf(item), 1);
+    this.categoryServ.remove(item);
   }
 }
