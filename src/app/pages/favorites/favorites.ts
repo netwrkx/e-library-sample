@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Book } from '../../models';
 import { NavController } from 'ionic-angular';
 import { FavoriteListComponent } from '../../components/books';
+import { CategoryService } from '../../services';
 
 @Component({
   selector: 'favorites-page',
@@ -17,27 +18,17 @@ export class FavoritesPage {
   /*
    *Fetch page with books
    */
-  constructor(public navCtrl: NavController) {
-    for (let key in localStorage) {
-      if (this.categories.indexOf(key.substring(14)) === -1) {
-        this.categories.push(key.substring(14));
-      }
-    };
+  constructor(public navCtrl: NavController, private categoryServ: CategoryService) {
+    this.categories = this.categories.concat(this.categoryServ.getCategories());
   };
 
   goTo(item) {
+
     if (item === 'All') {
-      for (let key in localStorage) {
-        if (key.length >= 12) this.books.push(JSON.parse(localStorage[key]));
-      }
+      this.books = this.categoryServ.getAllBooks();
     } else {
-      for (let key in localStorage) {
-        if (key.substring(14) === item) {
-          this.books.push(JSON.parse(localStorage[key]));
-        }
-      };
-    }
-    this.navCtrl.push(FavoriteListComponent, {books : this.books});
-    this.books=[];    
+      this.books = this.categoryServ.getBooks(item);
+    }    
+    this.navCtrl.push(FavoriteListComponent, { books: this.books });
   }
 }

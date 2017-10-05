@@ -8,7 +8,7 @@ import {
   BooksDetailsPage,
   FavoritesPage,
   SearchPage,
-  AddFavoriteList
+  CategoryDetails
 } from './pages';
 // Custom components
 import {
@@ -20,7 +20,7 @@ import {
 // Tabs component
 import {TabsPage} from './pages/tabs/tabs';
 // Custom services
-import {BooksService, FavoriteSwichService} from './services';
+import {BooksService, CategoryService} from './services';
 // Ionic providers
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -39,7 +39,7 @@ import {HttpModule} from '@angular/http';
     BookItemComponent,
     BooksListComponent,
     FavoriteListComponent,
-    AddFavoriteList
+    CategoryDetails
   ],
   imports: [
     HttpModule,
@@ -57,14 +57,14 @@ import {HttpModule} from '@angular/http';
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    FavoriteListComponent,    
-    AddFavoriteList
+    FavoriteListComponent,
+    CategoryDetails
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BooksService,
-    FavoriteSwichService,
+    CategoryService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
