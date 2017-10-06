@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, ViewController, NavParams, ToastController } from 'ionic-angular';
 import { Book } from '../../models';
-import { CategoryManagement } from '../../pages/category-management';
+import { CategoriesManagement } from '../../pages/categories-management';
 
 @Component({
   selector: 'books-details-page',
@@ -25,6 +25,6 @@ export class BooksDetailsPage {
   };
 
   categoryManage() {
-    this.modalCtrl.create(CategoryManagement, { book: this.book }).present();
+    this.modalCtrl.create(CategoriesManagement, { book: this.book }).present();
   };
 }

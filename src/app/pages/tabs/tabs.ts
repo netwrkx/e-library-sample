@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {HomePage} from '../home';
-import {CategoryPage} from '../categories';
+import {CategoriesPage} from '../categories';
 import {SearchPage} from '../search';
 
 @Component({
@@ -21,7 +21,7 @@ export class TabsPage {
     this.tabs = [
       {component: HomePage, icon: 'md-home', title: 'Home'},
       {component: SearchPage, icon: 'md-search', title: 'Search'},
-      {component: CategoryPage, icon: 'md-star', title: 'Favorites'},
+      {component: CategoriesPage, icon: 'md-star', title: 'Favorites'},
     ];
   }
 }

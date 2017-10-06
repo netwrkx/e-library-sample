@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {SearchPage} from '../search';
-import {CategoryPage} from '../categories';
+import {CategoriesPage} from '../categories';
 
 @Component({
   selector: 'page-home',
@@ -17,7 +17,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
     this.pages = {
       search: SearchPage,
-      favorites: CategoryPage
+      favorites: CategoriesPage
     };
   }
 

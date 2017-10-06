@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
  * @class Represents Book Service
  */
 @Injectable()
-export class CategoryService {
+export class CategoriesService {
   /**
    * Runs before the saveBook method
    * to remove a book from all categories
@@ -127,7 +127,7 @@ export class CategoryService {
 
   /**
    * Remove category or all categories from localStorage
-   * 
+   *
    * @param {String} item - name of category in local storage
    *
    */

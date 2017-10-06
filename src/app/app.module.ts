@@ -6,21 +6,21 @@ import {ELibraryApp} from './app.component';
 import {
   HomePage,
   BooksDetailsPage,
-  CategoryPage,
+  CategoriesPage,
   SearchPage,
-  CategoryManagement
+  CategoriesManagement
 } from './pages';
 // Custom components
 import {
   SearchFormComponent,
   BookItemComponent,
   BooksListComponent,
-  CategoryDetailsComponent
+  CategoriesDetailsComponent
 } from './components';
 // Tabs component
 import {TabsPage} from './pages/tabs/tabs';
 // Custom services
-import {BooksService, CategoryService} from './services';
+import {BooksService, CategoriesService} from './services';
 // Ionic providers
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -31,15 +31,15 @@ import {HttpModule} from '@angular/http';
   declarations: [
     ELibraryApp,
     BooksDetailsPage,
-    CategoryPage,
+    CategoriesPage,
     SearchPage,
     HomePage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    CategoryDetailsComponent,
-    CategoryManagement
+    CategoriesDetailsComponent,
+    CategoriesManagement
   ],
   imports: [
     HttpModule,
@@ -50,21 +50,21 @@ import {HttpModule} from '@angular/http';
   entryComponents: [
     ELibraryApp,
     BooksDetailsPage,
-    CategoryPage,
+    CategoriesPage,
     SearchPage,
     HomePage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
     BooksListComponent,
-    CategoryDetailsComponent,
-    CategoryManagement
+    CategoriesDetailsComponent,
+    CategoriesManagement
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BooksService,
-    CategoryService,
+    CategoriesService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
