@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NavController, ModalController, ToastController } from 'ionic-angular';
 import { Book } from '../../models';
 import { BooksDetailsPage } from '../../pages/book-details/books-details';
-import { CategoriesManagement } from '../../pages/categories-management';
+import { CategoriesManagementPage } from '../../pages/categories-management';
 
 @Component({
   selector: 'book-item',
@@ -40,6 +40,6 @@ export class BookItemComponent {
   }
 
   categoryManage() {
-    this.modalCtrl.create(CategoriesManagement, { book: this.book }).present();
+    this.modalCtrl.create(CategoriesManagementPage, { book: this.book }).present();
   }
 }

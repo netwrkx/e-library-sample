@@ -14,7 +14,7 @@ import { CategoriesService } from '../../services';
 /*
  *@class Represents Book Details Page
  */
-export class CategoriesManagement {
+export class CategoriesManagementPage {
   public book: Book;
   private categories: string[] = [];
   private category: string;
@@ -31,7 +31,7 @@ export class CategoriesManagement {
   closeModal(status) {
     if (status != 'cancel') {
       this.categoryService.removeBook(this.book);
-      if (status) this.categoryService.saveBook(status, this.book);      
+      if (status) this.categoryService.saveBook(status, this.book);
     }
     this.viewCtrl.dismiss();
   }

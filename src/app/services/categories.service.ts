@@ -86,12 +86,12 @@ export class CategoriesService {
    * Checks for books in a certain category
    *
    * @param  {Object} book - book for checking
-   * @param  {String} item - name of category in local storage for checking
+   * @param  {String} category - name of category in local storage for checking
    * @return {Object} el - if If the book belongs to a category,
    * it returns it, if no returns undefind
    */
-  find(book, item) {
-    let el = JSON.parse(`[${localStorage[item]}]`).find((item) => {
+  find(book, category) {
+    let el = JSON.parse(`[${localStorage[category]}]`).find((item) => {
       return item.id === book.id;
     });
     return el;
@@ -100,11 +100,11 @@ export class CategoriesService {
   /**
    * Get books from certain category
    *
-   * @param  {String} item - name of category in local storage
+   * @param  {String} category - name of category in local storage
    * @return {Object[]} books - list of books from certain category
    */
-  getBooks(item) {
-    let books = JSON.parse(`[${localStorage[item]}]`);
+  getBooks(category) {
+    let books = JSON.parse(`[${localStorage[category]}]`);
     return books;
   };
 
@@ -128,10 +128,10 @@ export class CategoriesService {
   /**
    * Remove category or all categories from localStorage
    *
-   * @param {String} item - name of category in local storage
+   * @param {String} category - name of category in local storage
    *
    */
-  remove(item) {
-    (item === 'All') ? localStorage.clear() : localStorage.removeItem(item);
+  remove(category) {
+    (category === 'All') ? localStorage.clear() : localStorage.removeItem(category);
   }
 }

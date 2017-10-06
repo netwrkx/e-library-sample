@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../../models';
 import { NavController } from 'ionic-angular';
-import { CategoriesDetailsComponent } from '../../components/books';
+import { CategoriesDetailsPage } from '../categories-details';
 import { CategoriesService } from '../../services';
 
 @Component({
@@ -22,18 +22,13 @@ export class CategoriesPage {
     this.categories = this.categoriesService.getCategories();
   };
 
-  goTo(item) {
-    if (item === 'All') {
-      this.books = this.categoriesService.getAllBooks();
-    } else {
-      this.books = this.categoriesService.getBooks(item);
-    }
-    this.navCtrl.push(CategoriesDetailsComponent, { books: this.books });
+  goTo(categoryName) {
+    this.navCtrl.push(CategoriesDetailsPage, {category: categoryName});
   };
 
-  removeCategory(item) {
-    (item === 'All') ? this.categories = [] :
-      this.categories.splice(this.categories.indexOf(item), 1);
-    this.categoriesService.remove(item);
+  removeCategory(categoryName) {
+    (categoryName === 'All') ? this.categories = [] :
+      this.categories.splice(this.categories.indexOf(categoryName), 1);
+    this.categoriesService.remove(categoryName);
   }
 }
