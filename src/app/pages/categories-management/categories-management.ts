@@ -24,20 +24,22 @@ export class CategoriesManagementPage {
     this.categoriesService.getCategories().subscribe(categories => this.categories = categories);
   }
   select(item) {
-    let status = (this.categoriesService.find(this.book, item)) ? true : false;
+    let book;
+    this.categoriesService.find(this.book, item).subscribe(item => book = item);
+    let status = (book) ? true : false;
     return status;
   }
 
-  closeModal(status) {
-    if (status != 'cancel') {
-      this.categoriesService.removeBook(this.book);
-      if (status) this.categoriesService.saveBook(status, this.book);
+  closeModal(option) {    
+    if (option != 'cancel') {
+      this.categoriesService.removeBook(this.book).subscribe();
+      if (option) this.categoriesService.saveBook(option, this.book).subscribe();
     }
     this.viewCtrl.dismiss();
   }
 
   addNew() {
-    if (this.category) this.categoriesService.setCategory(this.category);
+    if (this.category) this.categoriesService.setCategory(this.category).subscribe();
     this.categoriesService.getCategories().subscribe(categories => this.categories = categories);
   }
 }

@@ -29,6 +29,6 @@ export class CategoriesPage {
   removeCategory(categoryName) {
     (categoryName === 'All') ? this.categories = [] :
       this.categories.splice(this.categories.indexOf(categoryName), 1);
-    this.categoriesService.remove(categoryName);
+    this.categoriesService.remove(categoryName).subscribe();
   }
 }
