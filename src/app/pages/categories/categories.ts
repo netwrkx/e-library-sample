@@ -19,11 +19,11 @@ export class CategoriesPage {
    *Fetch page with books
    */
   constructor(public navCtrl: NavController, private categoriesService: CategoriesService) {
-    this.categories = this.categoriesService.getCategories();
+    this.categoriesService.getCategories().subscribe(categories => this.categories = categories);
   };
 
   goTo(categoryName) {
-    this.navCtrl.push(CategoriesDetailsPage, {category: categoryName});
+    this.navCtrl.push(CategoriesDetailsPage, { category: categoryName });
   };
 
   removeCategory(categoryName) {

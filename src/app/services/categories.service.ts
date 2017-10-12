@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/bundles/Rx.min';
+
 
 /*
  * @class Represents Book Service
@@ -21,8 +23,9 @@ export class CategoriesService {
       result = JSON.stringify(val).slice(1, JSON.stringify(val).length - 1);
       if (result === '[]') { result = '' } else result;
       return result;
-    }
-    let categories = this.getCategories();
+    };
+    let categories = [];
+    this.getCategories().subscribe(data => categories = data);
     for (let item of categories) {
       let el = this.find(book, item);
       if (el) {
@@ -71,15 +74,13 @@ export class CategoriesService {
    */
 
   getCategories() {
-    let categories = [];
     let arr = ['key', 'getItem', 'setItem', 'removeItem', 'clear', 'length'];
-    for (let key in localStorage) {
-      if (categories.indexOf(key) === -1) categories.push(key);
-    };
-    for (let key of arr) {
-      if (categories.indexOf(key) > 0) categories.splice(categories.indexOf(key), 1);
-    };
-    return categories;
+    return Observable.create((observer) => {
+      for (let key in localStorage) {
+        if (arr.indexOf(key) === -1) observer.next(key);
+      }
+    })
+      .bufferCount(localStorage.length);
   };
 
   /**
@@ -114,8 +115,9 @@ export class CategoriesService {
    * @return {Object[]} books - list of books from all categories
    */
   getAllBooks() {
-    let categories = this.getCategories();
+    let categories = [];
     let books = [];
+    this.getCategories().subscribe(data => categories = data);
     categories.map(item => {
       let category = JSON.parse(`[${localStorage[item]}]`);
       category.map(i => {
