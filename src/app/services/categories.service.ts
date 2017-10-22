@@ -28,7 +28,7 @@ export class CategoriesService {
         let result;
         if (el) {
           val[1].splice(val[1].indexOf(el), 1);
-          result = JSON.stringify(val[1]);          
+          result = JSON.stringify(val[1]);
           localStorage[val[0]] = result.slice(0, -1).slice(1);
         }
       })
@@ -134,6 +134,15 @@ export class CategoriesService {
           observer.next(books)
         })
       })
+      .map(books => {
+        let unique = [];
+        for (let book of books) {
+          let el = unique.find(item => { return item.id === book.id })
+          if (!el) unique.push(book);
+        }
+        return unique;
+      })
+
   };
 
   /**
