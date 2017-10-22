@@ -17,25 +17,21 @@ export class CategoriesService {
    */
   removeBook(book) {
     return Observable.create((observer) => {
-      let del = (e, i) => {
-        let val = JSON.parse(`[${localStorage[i]}]`);
-        let result;
-        console.log(val.indexOf(e))
-        val.splice(val.indexOf(e), 1);
-        result = JSON.stringify(val).slice(1, JSON.stringify(val).length - 1);
-        if (result === '[]') { result = '' } else result;
-        return result;
-      };
       let categories = [];
       this.getCategories().subscribe(data => categories = data);
       for (let item of categories) {
-        let el;
-        this.find(book, item).subscribe(book => el = book);
-        if (el) {
-          localStorage.setItem(item, del(el, item))
-        };
+        if (localStorage[item]) observer.next([item, JSON.parse(`[${localStorage[item]}]`)]);
       }
     })
+      .do(val => {
+        let el = (val[1].find((item) => { return item.id === book.id }));
+        let result;
+        if (el) {
+          val[1].splice(val[1].indexOf(el), 1);
+          result = JSON.stringify(val[1]);          
+          localStorage[val[0]] = result.slice(0, -1).slice(1);
+        }
+      })
   };
 
   /**

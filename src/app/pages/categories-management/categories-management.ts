@@ -30,10 +30,10 @@ export class CategoriesManagementPage {
     return status;
   }
 
-  closeModal(option) {    
-    if (option != 'cancel') {
+  closeModal(option) {
+    if (option != 'cancel' && option) {
       this.categoriesService.removeBook(this.book).subscribe();
-      if (option) this.categoriesService.saveBook(option, this.book).subscribe();
+      this.categoriesService.saveBook(option, this.book).subscribe();
     }
     this.viewCtrl.dismiss();
   }
