@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {HomePage} from '../home';
-import {FavoritesPage} from '../favorites';
+import {CategoriesPage} from '../categories';
 import {SearchPage} from '../search';
 import { OAuthProvidersListPage } from '../oauth/list/oauth-providers.list.page';
 import { OAuthProfilePage } from '../oauth/profile/oauth-profile.page';
@@ -17,14 +17,14 @@ import { OAuthProfilePage } from '../oauth/profile/oauth-profile.page';
 export class TabsPage {
   public tabs: Array<any>;
 /*
- * Create HomePage, SearchPage, FavoritesPage
+ * Create HomePage, SearchPage, CategoryPage
  */
   constructor() {
     this.tabs = [
+      {component: HomePage, icon: 'md-home', title: 'Home'},
+      {component: SearchPage, icon: 'md-search', title: 'Search'},
+      {component: CategoriesPage, icon: 'md-star', title: 'Favorites'},
       {component: OAuthProvidersListPage, icon: 'log-in', title: 'SignIn'},
-      {component: HomePage, icon: 'home', title: 'Home'},
-      {component: SearchPage, icon: 'search', title: 'Search'},
-      {component: FavoritesPage, icon: 'star', title: 'Favorites'},
       {component: OAuthProfilePage, icon: 'log-in', title: 'Sign-in'}
     ];
   }

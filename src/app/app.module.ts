@@ -7,8 +7,10 @@ import {OAuthModule} from './pages/oauth/oauth.module';
 import {
   HomePage,
   BooksDetailsPage,
-  FavoritesPage,
-  SearchPage
+  CategoriesPage,
+  SearchPage,
+  CategoriesManagementPage,
+  CategoriesDetailsPage
 } from './pages';
 // Custom components
 import {
@@ -19,7 +21,7 @@ import {
 // Tabs component
 import {TabsPage} from './pages/tabs/tabs';
 // Custom services
-import {BooksService} from './services';
+import {BooksService, CategoriesService} from './services';
 import { OAuthService } from './pages/oauth/oauth.service';
 // Ionic providers
 import {StatusBar} from '@ionic-native/status-bar';
@@ -31,13 +33,15 @@ import {HttpModule} from '@angular/http';
   declarations: [
     ELibraryApp,
     BooksDetailsPage,
-    FavoritesPage,
+    CategoriesPage,
     SearchPage,
     HomePage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
-    BooksListComponent
+    BooksListComponent,
+    CategoriesDetailsPage,
+    CategoriesManagementPage
   ],
   imports: [
     HttpModule,
@@ -49,20 +53,23 @@ import {HttpModule} from '@angular/http';
   entryComponents: [
     ELibraryApp,
     BooksDetailsPage,
-    FavoritesPage,
+    CategoriesPage,
     SearchPage,
     HomePage,
     TabsPage,
     SearchFormComponent,
     BookItemComponent,
-    BooksListComponent
+    BooksListComponent,
+    CategoriesDetailsPage,
+    CategoriesManagementPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BooksService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    OAuthService
+    OAuthService,
+    CategoriesService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 
