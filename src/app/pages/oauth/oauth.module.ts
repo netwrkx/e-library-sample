@@ -6,6 +6,7 @@ import { OAuthProvidersListPage } from './list/oauth-providers.list.page';
 import { OAuthProfilePage } from './profile/oauth-profile.page';
 import { GoogleOauthProvider } from './google/google-oauth.provider';
 import { FacebookOauthProvider } from './facebook/facebook-oauth.provider';
+import { Config } from '../../../config';
 
 @NgModule({
 	imports: [IonicModule],
@@ -20,7 +21,8 @@ import { FacebookOauthProvider } from './facebook/facebook-oauth.provider';
 	providers: [
 		OAuthService,
 		GoogleOauthProvider,
-		FacebookOauthProvider
+		FacebookOauthProvider,
+		Config
 	]
 })
 export class OAuthModule {
