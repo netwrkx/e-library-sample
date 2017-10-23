@@ -20,6 +20,7 @@ import {
 import {TabsPage} from './pages/tabs/tabs';
 // Custom services
 import {BooksService} from './services';
+import { OAuthService } from './pages/oauth/oauth.service';
 // Ionic providers
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -60,7 +61,8 @@ import {HttpModule} from '@angular/http';
     StatusBar,
     SplashScreen,
     BooksService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    OAuthService
   ]
 })
 
