@@ -30,7 +30,7 @@ constructor(http: Http, config: Config) {
 		this.cordovaOauth = new Oauth();
 	}
 login(): Promise<string> {
-		return this.cordovaOauth.login(this.facebook)
+		return this.cordovaOauth.logInVia(this.facebook)
 			.then((x: ILoginResponse) => x.access_token);
 	}
 
