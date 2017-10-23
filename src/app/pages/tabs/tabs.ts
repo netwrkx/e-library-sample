@@ -4,6 +4,7 @@ import {HomePage} from '../home';
 import {FavoritesPage} from '../favorites';
 import {SearchPage} from '../search';
 import { OAuthProvidersListPage } from '../oauth/list/oauth-providers.list.page';
+import { OAuthProfilePage } from '../oauth/profile/oauth-profile.page';
 
 @Component({
   templateUrl: 'tabs.html',
@@ -24,6 +25,7 @@ export class TabsPage {
       {component: HomePage, icon: 'home', title: 'Home'},
       {component: SearchPage, icon: 'search', title: 'Search'},
       {component: FavoritesPage, icon: 'star', title: 'Favorites'},
+      {component: OAuthProfilePage, icon: 'log-in', title: 'Sign-in'}
     ];
   }
 }
