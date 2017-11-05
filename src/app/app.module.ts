@@ -21,7 +21,7 @@ import {
 // Tabs component
 import {TabsPage} from './pages/tabs/tabs';
 // Custom services
-import {BooksService, CategoriesService} from './services';
+import {BooksService, CategoriesService, SessionService} from './services';
 // Ionic providers
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -69,6 +69,7 @@ import {HttpModule} from '@angular/http';
     SplashScreen,
     BooksService,
     CategoriesService,
+    SessionService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -19,25 +19,27 @@ export class CategoriesManagementPage {
   private categories: string[] = [];
   private category: string;
 
-  constructor(private params: NavParams, private viewCtrl: ViewController, private categoryService: CategoriesService) {
+  constructor(private params: NavParams, private viewCtrl: ViewController, private categoriesService: CategoriesService) {
     this.book = this.params.get('book');
-    this.categories = this.categoryService.getCategories();
+    this.categoriesService.getCategories().subscribe(categories => this.categories = categories);
   }
   select(item) {
-    let status = (this.categoryService.find(this.book, item)) ? true : false;
+    let book;
+    this.categoriesService.find(this.book, item).subscribe(item => book = item);
+    let status = (book) ? true : false;
     return status;
   }
 
-  closeModal(status) {
-    if (status != 'cancel') {
-      this.categoryService.removeBook(this.book);
-      if (status) this.categoryService.saveBook(status, this.book);
+  closeModal(option) {
+    if (option != 'cancel' && option) {
+      this.categoriesService.removeBook(this.book).subscribe();
+      this.categoriesService.saveBook(option, this.book).subscribe();
     }
     this.viewCtrl.dismiss();
   }
 
   addNew() {
-    if (this.category) this.categoryService.setCategory(this.category);
-    this.categories = this.categoryService.getCategories();
+    if (this.category) this.categoriesService.setCategory(this.category).subscribe();
+    this.categoriesService.getCategories().subscribe(categories => this.categories = categories);
   }
 }

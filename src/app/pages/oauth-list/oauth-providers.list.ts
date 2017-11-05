@@ -1,30 +1,29 @@
 import {Component, OnInit} from '@angular/core';
-import { NavController } from 'ionic-angular';
-import firebase from 'firebase'
+import { SessionService } from './../../services'
 
 @Component({
   templateUrl: 'oauth-providers.list.html'
 })
 export class OauthProvidersListPage implements OnInit{
   currentLogIn;
-  constructor(private nav: NavController){}
+  constructor(private session: SessionService){}
   ngOnInit(){
     this.sessionCheck();
   }
 
   login(source: string){
-      const provider = new firebase.auth.FacebookAuthProvider();
-      firebase.auth().signInWithPopup(provider).then(result => {
-        this.sessionCheck()
-      }).catch(error => console.log(error));
+    if (source === 'facebook'){
+      this.session.loginFB()
+        .then(result => this.sessionCheck())
+        .catch(error => console.log(error));
+    }
   }
   logout(){
-    firebase.auth().signOut()
+    this.session.logout()
       .then(() => this.sessionCheck())
       .catch(error => console.log(error));
-
   }
   sessionCheck(){
-    this.currentLogIn = firebase.auth().currentUser;
+    this.currentLogIn = this.session.check();
   }
 }
