@@ -9,7 +9,8 @@ import {
   CategoriesPage,
   SearchPage,
   CategoriesManagementPage,
-  CategoriesDetailsPage
+  CategoriesDetailsPage,
+  OauthProvidersListPage
 } from './pages';
 // Custom components
 import {
@@ -27,6 +28,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 // Angular providers
 import {HttpModule} from '@angular/http';
 
+
 @NgModule({
   declarations: [
     ELibraryApp,
@@ -39,7 +41,8 @@ import {HttpModule} from '@angular/http';
     BookItemComponent,
     BooksListComponent,
     CategoriesDetailsPage,
-    CategoriesManagementPage
+    CategoriesManagementPage,
+    OauthProvidersListPage
   ],
   imports: [
     HttpModule,
@@ -58,7 +61,8 @@ import {HttpModule} from '@angular/http';
     BookItemComponent,
     BooksListComponent,
     CategoriesDetailsPage,
-    CategoriesManagementPage
+    CategoriesManagementPage,
+    OauthProvidersListPage
   ],
   providers: [
     StatusBar,

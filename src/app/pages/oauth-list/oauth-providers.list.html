@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Oauth providers</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <h4 padding *ngIf="!currentLogIn">Please login by using one of the following providers.</h4>
+  <h4 padding *ngIf="currentLogIn">You are already logged in to the application! Would you like to log out?</h4>
+  <ion-list inset>
+    <ion-item *ngIf="!currentLogIn" (click)="login('facebook')">
+      <ion-icon name="logo-facebook" item-left></ion-icon>
+      Facebook
+    </ion-item>
+    <ion-item *ngIf="currentLogIn" (click)="logout()">
+      Log out
+    </ion-item>
+  </ion-list>
+</ion-content>
