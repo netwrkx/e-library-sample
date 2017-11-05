@@ -19,11 +19,11 @@ export class CategoriesDetailsPage {
 
 
   constructor(private params: NavParams, private viewCtrl: ViewController, private categoriesService: CategoriesService) {
-    this.category = params.get('category');    
+    this.category = params.get('category');
     if (this.category === 'All') {
-      this.books = this.categoriesService.getAllBooks();
+      this.categoriesService.getAllBooks().subscribe(books => this.books = books);
     } else {
-      this.books = this.categoriesService.getBooks(this.category);
+      this.categoriesService.getBooks(this.category).subscribe(books => this.books = books);
     }
   }
 }
