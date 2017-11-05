@@ -15,7 +15,7 @@ page-home {
     background: rgba(0, 0, 0, 0.25);
     color: white;
     padding: 10px;
-    font-size: 16px;
+    font-size: $h6-font-size;
     position: absolute;
     top: 0;
     width: 100%;
@@ -27,17 +27,16 @@ page-home {
   }
 
   .content-inner {
-    padding: 10px;
-    margin: 10px;
+    padding: 1em;
     text-align: justify;
   }
 
   .title {
-    font-size: 3em;
+    font-size: $title-font-size;
   }
 
   .sub-title {
-    font-size: 1.5em;
+    font-size: $h2-font-size;
   }
 
   .content-body {
@@ -45,13 +44,12 @@ page-home {
   }
 
   .content-body-header {
-    font-size: 1.2em;
+    font-size: $h4-font-size;
     font-weight: 700;
   }
 
   .content-footer {
-    font-size: 1em;
-    color: #e0bc75;
+    color: $primary-color;
     bottom: 0;
     right: 1em;
     position: absolute;
@@ -64,10 +62,10 @@ page-home {
   }
 
   .sub-title, .selected-text, .content-footer {
-    font-family: Papyrus, fantasy;
+    font-family: $secondary-font-stack;
   }
 
   .sub-title, .selected-text {
-    text-shadow: -0.5px -0.5px 0 #e0bc75, 0.5px -0.5px 0 #e0bc75, -0.5px 0.5px 0 #e0bc75, 0.5px 0.5px 0 #e0bc75;
+    text-shadow: $text-shadow-stack;
   }
 }

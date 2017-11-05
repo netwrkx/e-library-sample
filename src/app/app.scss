@@ -13,8 +13,14 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+$primary-font-stack: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+$secondary-font-stack: Papyrus, fantasy;
+$primary-color: #e0bc75;
+$text-shadow-stack: -0.5px -0.5px 0 $primary-color, 0.5px -0.5px 0 $primary-color, -0.5px 0.5px 0 $primary-color, 0.5px 0.5px 0 $primary-color;
+$title-font-size: 3em;
+
 ion-app.md {
-  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif !important;
+  font-family: $primary-font-stack;
 }
 
 .toolbar {

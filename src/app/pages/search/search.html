@@ -1,8 +1,10 @@
-<ion-header>
+
+
+
+<ion-content>
   <ion-toolbar>
     <search-form (searchUpdate)="onSearch($event)"></search-form>
   </ion-toolbar>
-</ion-header>
-<ion-content>
+
   <books-list [text]="text"></books-list>
 </ion-content>
