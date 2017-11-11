@@ -27,6 +27,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 // Angular providers
 import {HttpModule} from '@angular/http';
+import {NavController, MenuController} from 'ionic-angular';
 
 
 @NgModule({

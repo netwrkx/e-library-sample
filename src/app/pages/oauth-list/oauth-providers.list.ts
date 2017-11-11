@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import { SessionService } from './../../services'
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import { SessionService } from './../../services';
 
 @Component({
-  templateUrl: 'oauth-providers.list.html'
+  selector: 'oauth-providers',
+  templateUrl: 'oauth-providers.list.html',
+  styleUrls: ['/oauth-providers.list.scss']
 })
 export class OauthProvidersListPage implements OnInit{
   currentLogIn;
@@ -14,15 +16,13 @@ export class OauthProvidersListPage implements OnInit{
   login(source: string){
     if (source === 'facebook'){
       this.session.loginFB()
-        .then(result => this.sessionCheck())
+        .then(result => {
+          this.sessionCheck();
+        })
         .catch(error => console.log(error));
     }
   }
-  logout(){
-    this.session.logout()
-      .then(() => this.sessionCheck())
-      .catch(error => console.log(error));
-  }
+
   sessionCheck(){
     this.currentLogIn = this.session.check();
   }
